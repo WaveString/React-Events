@@ -1,0 +1,13 @@
+.wrapper {
+    position: relative;
+}
+
+.wrapper:hover {
+    cursor: pointer;
+}
+
+.counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

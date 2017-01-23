@@ -1,0 +1,10 @@
+.counter {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 22px;
+    border-radius: 2px;
+    background-color: #ee2a16;
+    color: rgba(71, 71, 71, .5);
+}

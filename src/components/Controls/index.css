@@ -1,0 +1,18 @@
+.wrapper {
+    margin: 0 20px;
+}
+
+.coloumn {
+    width: 350px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.row {
+    margin: 10px 0;
+}
+
+.sendButton {
+    margin-top: 4px;
+}
