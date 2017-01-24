@@ -1,3 +1,4 @@
+require('localenv');
 const __DEVELOPMENT__ = process.env.NODE_ENV === 'development';
 const config = __DEVELOPMENT__ ?
     require('./webpack.config.dev.js') :

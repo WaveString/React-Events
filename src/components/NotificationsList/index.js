@@ -32,15 +32,17 @@ export default class NotificationsList extends Component {
         }
 
         return (
-            <List>
-                { events.slice(0, 5).map((event, i) =>
-                    <ListItem key={i} primaryText={event.title} secondaryText={formatDate(event.datetime)} />) }
+            <div className={styles.wrapper}>
+                <List>
+                    { events.slice(0, 5).map((event, i) =>
+                        <ListItem key={i} primaryText={event.title} secondaryText={formatDate(event.datetime)} />) }
 
-                { events.length > 5 ?
-                    <a href="" className={styles.link} onClick={this.handleClickOnLink}>
-                        посмотреть все...
-                    </a> : null }
-            </List>
+                    { events.length > 5 ?
+                        <a href="" className={styles.link} onClick={this.handleClickOnLink}>
+                            посмотреть все...
+                        </a> : null }
+                </List>
+            </div>
         );
     }
 }

@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import SocialNotifications from 'material-ui/svg-icons/social/notifications-none';
 import NotificationsList from '../NotificationsList';
 import Counter from '../Counter';
-import Popup from '../Popup';
 
 import styles from './index.css';
 
@@ -40,11 +39,7 @@ export default class Notifications extends Component {
                     <Counter count={unreadEvents.length}/>
                 </div>
                 <div onClick={e => e.stopPropagation()}>
-                    { popup.isOpen &&
-                        <Popup>
-                            <NotificationsList events={events} onTogglePopup={onTogglePopup}/>
-                        </Popup>
-                    }
+                    { popup.isOpen && <NotificationsList events={events} onTogglePopup={onTogglePopup}/> }
                 </div>
             </div>
         );

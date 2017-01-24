@@ -12,6 +12,8 @@ import {
     togglePopup
 } from '../../actions';
 
+import styles from './index.css';
+
 export class App extends Component {
     constructor(props) {
         super(props);
@@ -31,7 +33,7 @@ export class App extends Component {
 
         return (
             <MuiThemeProvider>
-                <div style={{ width: '900px' }}>
+                <div className={styles.layout}>
                     <Header {...{ popup, events, unreadEvents, onTogglePopup }}/>
                     <Controls {...{ onAddEvent, onMarkAllRead, onDeleteAllEvents, onTogglePopup }}/>
                 </div>

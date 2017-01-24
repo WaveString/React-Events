@@ -1,3 +1,34 @@
 .link {
     padding: 20px 16px 16px;
 }
+
+.wrapper {
+    position: absolute;
+    width: 260px;
+    top: 65px;
+    right: -7px;
+    background-color: #e4fff5;
+    animation: fade-in .3s linear;
+}
+
+.wrapper::before {
+    position: absolute;
+    top: -17px;
+    border: 6px solid;
+    border-width: 0 18px 18px;
+    border-color: transparent transparent #e4fff5;
+    margin-left: -1px;
+    right: 19px;
+    content: '';
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        top: 55px;
+    }
+    to {
+        opacity: 1;
+        top: 65px;
+    }
+}
