@@ -14,7 +14,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
-            inject: false
+            inject: 'body'
         }),
         new ExtractTextPlugin('bundle.css', { allChunks: true, disable: !isProdaction }),
     ],
