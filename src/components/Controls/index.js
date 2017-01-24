@@ -5,6 +5,13 @@ import RaisedButton from 'material-ui/RaisedButton';
 import styles from './index.css';
 
 export default class Controls extends Component {
+    static propTypes = {
+        onAddEvent: PropTypes.func,
+        onMarkAllRead: PropTypes.func,
+        onDeleteAllEvents: PropTypes.func,
+        onTogglePopup: PropTypes.func
+    };
+
     constructor(props) {
         super(props);
 
@@ -31,7 +38,7 @@ export default class Controls extends Component {
     }
 
     render() {
-        const { onMarkAllRead, onDeleteAllEvents } = this.props;
+        const { onMarkAllRead, onDeleteAllEvents, onTogglePopup } = this.props;
 
         return (
             <div className={styles.wrapper}>
@@ -69,7 +76,11 @@ export default class Controls extends Component {
                         />
                     </div>
                     <div className={styles.row}>
-                        <RaisedButton label='Скрыть / показать попап нотификаций' primary={true} fullWidth={true}/>
+                        <RaisedButton
+                            label='Скрыть / показать попап нотификаций'
+                            primary={true}
+                            fullWidth={true}
+                            onClick={onTogglePopup}/>
                     </div>
                 </div>
             </div>

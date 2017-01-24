@@ -12,10 +12,10 @@ export function eventsReducer(state = eventsInitialState, action) {
             return [
                 ...state,
                 {
-                    id: Math.max.apply(null, (state.map(item => item.id))) + 1,
+                    id: state.length ? Math.max.apply(null, (state.map(item => item.id))) + 1 : 1,
                     title: action.eventName,
                     unread: true,
-                    datetime: new Date()
+                    datetime: action.datetime
                 }
             ];
         case MARK_ALL_READ:
@@ -32,4 +32,8 @@ export function eventsReducer(state = eventsInitialState, action) {
 // Selectors
 export function getUnreadEvents(state) {
     return state.events.filter(event => event.unread);
+}
+
+export function getSortEvents(state) {
+    return state.events.sort((a, b) => a.datetime < b.datetime);
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import Root from './containers/Root';
+import { addEvent } from './actions';
 
 import configureStore from './store/configureStore';
 
@@ -12,6 +13,10 @@ injectTapEventPlugin();
 const store = configureStore();
 
 const rootEl = document.getElementById('root');
+
+setInterval(() => {
+    store.dispatch(addEvent(`Случайное сообщение ${Math.ceil(Math.random() * 10000)}`))
+}, 20000);
 
 ReactDom.render(
     <AppContainer>
